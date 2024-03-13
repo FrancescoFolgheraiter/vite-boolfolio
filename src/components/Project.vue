@@ -24,7 +24,9 @@ export default{
 
 <template>
     <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <div v-if="dataProject['thumb'] !=null">
+            <img :src="'http://127.0.0.1:8000/storage/'+dataProject['thumb']" class="card-img-top" alt="...">
+        </div>
         <div class="card-body">
             <h5 class="card-title">{{ dataProject['name'] }}</h5>
             <p class="card-text">{{ dataProject['description'] }}</p>
