@@ -24,12 +24,16 @@ export default{
 
 <template>
 	<h1>My template Vite Vue Sass</h1>
-	<AppHeader/>
-	<AppMain/>
-	<AppFooter/>
+	<div class="text-center">
+		<AppHeader/>
+		<AppMain/>
+		<AppFooter/>
+	</div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use"assets/scss/main.scss" as *;
-@import "assets/scss/partials/reset.scss";
+
+//importazione bootstrap
+@import "bootstrap/scss/bootstrap";
 </style>
