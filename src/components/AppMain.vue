@@ -3,22 +3,23 @@
 import axios from 'axios';
 //importazione store
 import { store } from '../store.js';
+//importazione componente Project
+import Project from './Project.vue';
 
 export default{
 	data() {
 		return{
-			text:"Main",
 			store
 		};
 	},
 	components:{
-		
+		Project
 	},
 	methods:{
       apiProjects(){
         axios.get(this.store.urlApiAllProjects)
           .then(results =>{
-            this.store.projects = results.data;
+            this.store.projects = results.data.data.projects.data;
 			console.log(this.store.projects)
           })
       }
@@ -32,7 +33,13 @@ export default{
 
 <template>
 	<main>
-		{{ text }}
+		<div class="container">
+			<div class="row">
+				<div v-for="(elem,i) in store.projects" class="col-6 mb-4">
+					<project :dataProject="elem"/>
+				</div>
+			</div>
+		</div>
 	</main>
 </template>
 
