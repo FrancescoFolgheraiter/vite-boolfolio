@@ -1,12 +1,14 @@
 <script>
 //importazione axios
 import axios from 'axios';
+//importazione store
+import { store } from '../store.js';
 
 export default{
 	data() {
 		return{
 			text:"Main",
-			projects:{}
+			store
 		};
 	},
 	components:{
@@ -14,9 +16,10 @@ export default{
 	},
 	methods:{
       apiProjects(){
-        axios.get('http://127.0.0.1:8000/api/projects')
+        axios.get(this.store.urlApiAllProjects)
           .then(results =>{
-            console.log(results.data);
+            this.store.projects = results.data;
+			console.log(this.store.projects)
           })
       }
     },
