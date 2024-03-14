@@ -1,6 +1,6 @@
 import { reactive } from 'vue';
 
 export const store = reactive({
-    urlApiAllProjects:'http://127.0.0.1:8000/api/projects',
+    urlApiAllProjects:'http://127.0.0.1:8000/api/projects/',
     projects:[],
 });

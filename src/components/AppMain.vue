@@ -1,6 +1,4 @@
 <script>
-//importazione axios
-import axios from 'axios';
 //importazione store
 import { store } from '../store.js';
 
@@ -9,7 +7,6 @@ export default{
 	data() {
 		return{
 			store,
-
 		};
 	},
 	components:{

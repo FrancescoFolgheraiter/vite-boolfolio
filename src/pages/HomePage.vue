@@ -25,7 +25,7 @@ export default{
 				page:page
 			}
 		})
-          .then(results =>{
+        .then(results =>{
             this.store.projects = results.data.data.projects.data;
 			this.currentPage = results.data.data.projects.current_page;
 			this.lastPage = results.data.data.projects.last_page;

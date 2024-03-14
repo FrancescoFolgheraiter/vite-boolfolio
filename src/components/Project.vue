@@ -13,16 +13,7 @@ export default{
         dataProject:Object, 
     },
 	methods:{
-        formatMyDate(date) {
-            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
-            
-            const day = days[date.getDay()];
-            const month = months[date.getMonth()];
-            const year = date.getFullYear();
-            
-            return `${day} ${month} ${year}`;
-        }
+
 
     },
     mounted(){
@@ -68,6 +59,9 @@ export default{
                         </li>
                     </ul>
                 </div>
+            </div>
+            <div>
+                <router-link :to="{name:'singleProject', params: {slug : dataProject['slug']}}">Vai alla pagina del progetto</router-link>
             </div>
     </div>
 </div>
