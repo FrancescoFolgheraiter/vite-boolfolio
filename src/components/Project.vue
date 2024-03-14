@@ -13,6 +13,16 @@ export default{
         dataProject:Object, 
     },
 	methods:{
+        formatMyDate(date) {
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
+            
+            const day = days[date.getDay()];
+            const month = months[date.getMonth()];
+            const year = date.getFullYear();
+            
+            return `${day} ${month} ${year}`;
+        }
 
     },
     mounted(){
@@ -23,7 +33,7 @@ export default{
 </script>
 
 <template>
-    <div class="card">
+    <div class="card" style="height: 32rem;overflow-y: auto;">
         <div v-if="dataProject['thumb'] !=null">
             <img :src="'http://127.0.0.1:8000/storage/'+dataProject['thumb']" class="card-img-top" alt="...">
         </div>
@@ -36,7 +46,7 @@ export default{
                     Totale ore progetto {{ dataProject['total_hours'] }}
                 </div>
                 <div>
-                    Data inizio progetto {{ dataProject['start_date'] }}
+                    Data inizio progetto {{(dataProject['start_date']) }}
                 </div>
                 <div>
                     Ultimo aggiornamento {{ dataProject['last_update_date'] }}
@@ -45,7 +55,7 @@ export default{
             <hr>
             <div class="d-flex justify-content-around ">
                 <div v-if="dataProject['type'] != null">
-                    Tipo di progetto:{{ dataProject['type']['name']}}
+                    Tipo di progetto: {{ dataProject['type']['name']}}
                 </div>
                 <div v-else>
                     Nessun tipo di progetto
