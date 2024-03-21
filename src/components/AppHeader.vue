@@ -26,10 +26,10 @@ export default{
 					<img src="../../public/img/logoF.svg" alt="">
 				</div>
 				<ul class="m-0 d-flex flex-grow-1 justify-content-end list-unstyled align-items-center ">
-					<li class="me-5"v-for="(elem, i ) in store.navHeader">
-						<a class="my-underline-text" href="">
+					<li class="me-5" v-for="(elem, i ) in store.navHeader" :key="i">
+						<routerLink class="my-underline-text" :to="{name: elem }">
 							{{ elem }}
-						</a>
+						</routerLink>
 					</li>
 				</ul>
 			</div>
@@ -63,7 +63,7 @@ li{
 		bottom: -2px;
 		width: 0;
 		height: 2px; 
-		background-color:rgba(172, 255, 47, 0.50); 
+		background-color:rgba(142, 211, 40, 0.5); 
 		transition: width 0.2s ease; 
 	}
 

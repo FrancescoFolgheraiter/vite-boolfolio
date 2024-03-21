@@ -1,18 +1,15 @@
 <script>
-//importazione store
-import { store } from '../store.js';
 
 
 export default{
 	data() {
 		return{
-			store,
 		};
 	},
 	methods:{ 
     },
     mounted(){
-
+      
     }
 }
 
@@ -20,7 +17,7 @@ export default{
 
 <template>
 	<main>
-		<router-view></router-view>
+		Contact
 	</main>
 </template>
 
